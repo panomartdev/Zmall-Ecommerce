@@ -57,6 +57,7 @@ const SingleProductPage = () => {
         dispatch(setCartMessageOff());
      },2000)
   }
+  document.title = `Zmall - Online Shopping | ${title}`
 
   return (
     <main className='py-5'>

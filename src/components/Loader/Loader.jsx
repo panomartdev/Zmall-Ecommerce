@@ -1,4 +1,4 @@
-import React from 'react'
+
 import "./Loader.scss";
 import { loader } from '../../utils/image'
 

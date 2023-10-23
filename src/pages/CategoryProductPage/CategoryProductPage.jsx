@@ -7,10 +7,9 @@ import { STATUS } from '../../utils/status';
 import Loader from '../../components/Loader/Loader';
 import Product from '../../components/Product/Product';
 
-const CategoryProductPage = ({homeCategory}) => {
+const CategoryProductPage = () => {
   const dispatch = useDispatch();
   const {category} = useParams();
-  const fetchCategory = category ? category : homeCategory;
   const categoryProducts = useSelector(getAllProductsByCategory);
   const categoryProductsStatus = useSelector(getAllProductsByCategoryStatus);
   const categoryTitle = category.split('-')
