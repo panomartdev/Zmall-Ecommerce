@@ -1,0 +1,115 @@
+@import '../../index.scss';
+header{
+    .header-top{
+        padding: 0.1em 0;
+        .top-header-list{
+            @include flex(center,end,none);
+            li{
+                font-size: 12.5px;
+                margin-left: 2em;
+                cursor: pointer;
+                &:nth-child(-n+4){
+                    @media screen and (max-width: 768px) {
+                        display: none;
+                    } 
+                }
+                @media screen and (max-width: 768px) {
+                    font-size: 10px;
+                }
+            }
+        }
+        
+    }
+    .header-main{
+        padding: 0.7em 0;
+        &-content{
+            @include flex(center, space-between, none);
+            .brand-title{
+                font-size: 40px;
+                @include flex(center,none,none);
+                &-icn{
+                    font-size: 50px;
+                    font-weight: 100;
+                }
+                @media screen and (max-width: 992px) {
+                    font-size: 30px;
+                    &-icn{
+                        font-size: 40px;
+                    }
+                }
+                @media screen and (max-width: 480px) {
+                    font-size: 25px;
+                    &-icn{
+                        font-size: 30px;
+                        font-weight: 100;
+                    }
+                }
+            }
+            .search-bar{
+                margin: 0 1em;
+                background: lighten(#EFF0F5, 0.1);
+                border-radius: 4px;
+                @include flex(none,none,none);
+                @media screen and (max-width: 768px) {
+                    margin: 0 0.5em;
+                }
+                .search-form{
+                    width: 100%;
+                    border: none;
+                    background: transparent;
+                    width: 100%;
+                    outline: none;
+                    padding: 1em 1.2em;
+                    &::placeholder{
+                        color: gray;
+                        font-family: $mainfont-family;
+                    }
+                    @media screen and (max-width: 480px) {
+                        padding: 0.8em 1.2em;
+                        font-size: 10px;
+                    }
+                }
+                .search-button{
+                    background: $clr-orange;
+                    color: white;
+                    border-radius: 0 3px 3px 0;
+                    font-size: 16px;
+                    width: 3em;
+                }       
+            }
+            .cart{
+                @include flex(center,none,none);
+                &-btn{
+                    color: white;
+                    font-size: 40px;
+                    @media screen and (max-width: 480px) {
+                        font-size: 30px;
+                    }
+
+                    .cart-icon{
+                        position: relative;
+                        top: 3px;
+                        .cart-value{
+                                position: absolute;
+                                top: -12px;
+                                right: -7px;
+                                color: white;
+                                border-radius: 50%;
+                                font-size: 14px;
+                                min-width: 22px;
+                                padding: 3px;   
+                                text-align: center;
+                                background-color: $clr-orange;
+                                @media screen and (max-width: 480px)  {
+                                    font-size: 10px;
+                                    top: -8px;
+                                    min-width: 18px;
+                                    right: -4.5px;
+                                }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

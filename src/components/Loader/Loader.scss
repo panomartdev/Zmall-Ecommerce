@@ -1,0 +1,9 @@
+@import '../../index.scss';
+.loader{
+    @include flex(center,center,none);
+    background : transparent;
+    width: 100%;
+    img{
+        width: 80px;
+    }
+}

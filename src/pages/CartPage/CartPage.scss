@@ -1,0 +1,205 @@
+@import '../../index.scss';
+.cartpage{
+    min-height: 50vh;
+    .empty-cart{
+        min-height: 60vh;
+        .empty-cart-btn{
+            margin-top: 1em;
+            padding: 1em 2.25em;
+            color: $clr-orange;
+            border: 1px solid $clr-orange;
+        } 
+    }
+    .cart{
+        display: grid;
+        grid-template-columns: 5fr 2fr;
+        column-gap: 0.75em;
+        @media screen and (max-width: 1080px) {
+            display: block;
+        }
+        &-products-list{
+            .table-head{
+                padding: 1em;
+                &-title{
+                    
+                }
+                button{
+                    padding: 0.25em 1em;
+                    color: $clr-orange;
+                    border: 1px solid $clr-orange;
+                    background: transparent;
+                    i{
+                        font-size: 20px;
+                        position: relative;
+                        top: 1.5px;
+                    }
+                    span{
+                        margin-left: 6px;
+                    }
+                }
+            }
+            .table-row{
+                display: grid;
+                grid-template-columns: 7fr 2fr 2fr 2fr;
+                align-items: center;
+                @media screen and (max-width: 992px) {
+                    grid-template-columns: 10fr 1.25fr;
+                    row-gap: 0.75em;
+                }
+            }
+            .products-item{
+                @include flex(center,none,none);
+                .delete-btns{
+                    background-color: transparent;
+                    font-size: 20px;
+                }
+                &-list{
+                    margin-left: 0.4em;
+                    width: 100%;
+                    &-informations{
+                       
+                        @include flex(center,none,none);
+                        &-img{
+                            height: 110px;
+                            width: 25%;
+                            @media screen and (max-width: 992px) {
+                                height: 80px;
+                                width: 20%;
+                            }
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                        &-text{
+                            padding-right: 1em;
+                            margin-left: 0.75em;
+                            width: 75%;
+                            .products-title{
+                                @media screen and (max-width: 640px) {
+                                    font-size: 13px;
+                                }
+                            }
+                            .products-des{
+                                @media screen and (max-width: 640px) {
+                                    font-size: 11px;
+                                }
+                            }
+                            p{
+                                margin: 0.75em 0;
+                            }
+                        }
+                    }
+                    &-unitprice{
+                        @media screen and (max-width: 640px) {
+                            span{
+                                font-size: 12px
+                            }
+                        }
+                    }
+                    &-quantity-and-total-price{
+                        @include flex(center,space-between,none);
+                        .quantity-list{
+                            .quantity{
+                                &-text{
+                                    color: rgba($clr-dark,0.8);
+                                    margin-right: 3.5em;
+                                }
+                                &-change{
+                                    button{
+                                        padding: 0.4em;
+                                        color: rgba($clr-black,0.7);
+                                        background: rgba(gray, 0.3);
+                                        transition: all 0.3s ease-in-out;
+                                        font-size: 12px;
+                                        @media screen and (max-width: 640px) {
+                                            padding: 0.2em;
+                                        }
+                                        &:hover{
+                                            background: rgba(gray, 0.7);
+                                            color: white;
+    
+                                        }
+                                    }
+                    
+                                }
+                                &-value{
+                                    @media screen and (max-width: 640px){
+                                        font-size: 14px;
+                                        font-weight: 300;
+                                    }
+                                }
+                            }
+                        } 
+                    }
+                    .total-price{
+                        @media screen and (max-width: 768px) {
+                            margin: 0;
+                            font-size: 16px;    
+                        }
+                        @media screen and (max-width: 640px) {
+                            font-size: 16px;
+                        }
+                    } 
+                }
+            }
+        }
+        &-summary{
+            padding: 1em;
+            &-title{
+                margin-bottom: 0.5em;
+            }
+            .horizontal-line{
+                height: 2px;
+                border-radius: 10px;
+                background: rgba(black,0.2);
+            }
+            &-text{
+                margin: 1.5em 0;
+                @media screen and (max-width: 768px){
+                    margin: 1em 0;
+                }
+            }
+            &-voucher{
+                margin: 2em 0;
+                @media screen and (max-width: 768px){
+                    margin: 1em 0;
+                }
+                input{
+                    width: 75%;
+                    padding: 0.6em 0.5em;
+                    font-size: 13px;
+                    border: 1px solid rgba($clr-black,0.2);
+                   
+                    &::placeholder{
+                        color: rgb(163, 163, 163);
+                    }
+                }
+                button{
+                    background: #1a9cb7;
+             
+                    margin-left: 0.5em;
+                    font-size: 14px;
+                    width: 25%;
+                }
+            }
+            &-checkout-btn{
+                button{
+                    color: white;
+                    background: $clr-orange;
+                    width: 100%;
+                    padding: 1em 0;
+                    transition: all 0.2s ease-in-out;
+                    @media screen and (max-width: 768px){
+                        padding: 0.75em 0;
+                        font-size: 12px;
+                    }
+                    &:hover{
+                        background: darken($clr-orange, 10);
+                    }
+                }
+            }
+        }
+    }
+}

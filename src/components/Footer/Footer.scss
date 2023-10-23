@@ -1,0 +1,71 @@
+@import '../../index.scss';
+footer{
+    margin-top: 4em;
+    padding: 0 1em;
+    .footer-main-content{
+        @include flex(none,space-between,row);
+        flex-wrap: wrap;
+        .footer-title{
+            margin-bottom: 1.5em;
+        }
+        .payment-cnt{
+            margin: 0 3em 3em 0;
+            &-img{
+                margin-right: 2em;
+                img{
+                    height: 220px;
+                    @media screen and (max-width: 640px) {
+                        height: 180px;
+                    }
+                }
+            }
+        }
+        .delivery-cnt{
+            margin: 0 2em 3em 0;
+            &-img{
+                margin-top: 1.5em; 
+                @include flex(none,none,none);
+                img{
+                    height: 120px;
+                    @media screen and (max-width: 640px) {
+                        height: 70px;
+                    }
+                }
+            }
+        }
+        .contact-cnt{
+            margin: 0 2em 3em 0;
+            @media screen and (max-width: 640px)  {
+                margin-bottom: 2em;
+            }
+            &-icons{
+                display: flex;
+                img{
+                    height: 32px;
+                    margin-right: 3px;
+                }
+                i{
+                    margin-right: 3px;
+                    font-size: 32px;
+                    &:nth-child(1){
+                        color: #4267B2;
+                    }
+                    &:nth-child(2){
+                        color: #0072b1;
+                    }
+                    &:nth-child(3){
+                        color: #FF0000;
+                    }
+                    &:nth-child(5){
+                        color: #000000;
+                    }
+
+                }
+            }
+        }
+    }
+    .footer-bottom-content{
+        color: rgb(84, 84, 84);
+        
+    }
+}

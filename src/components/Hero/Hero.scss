@@ -1,0 +1,57 @@
+@import '../../index.scss';
+.hero-slider{
+    .slider-content{
+        width: 100%;
+        overflow: hidden;
+        .slider-items{
+            max-height: 340px;
+            outline: none;
+        }
+    }
+    .hero-bottom{
+        background-color: $clr-orange;
+        &-content{
+            .statement-list{
+                margin-left: 3em;
+                p{
+                    margin-left: 0.3em;
+                }
+                @media screen and (max-width: 640px) {
+                    font-size: 12px;
+                }
+                @media screen and (max-width: 420px) {
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: 10px !important;
+    list-style: none;
+    display: block;
+    li{
+        margin: 0 1px !important;
+    }
+    
+    li.slick-active button:before {
+      opacity: 0.75 !important;
+      color: white !important;
+      font-size: 13px !important;
+      border-radius: 50%;
+      width: 10px !important;
+      height: 10px !important;
+      margin-top: 0;
+    }
+    
+    li button:before {
+      font-family: 'slick';
+      font-size: 13px !important;
+      opacity: 0.5 !important;
+      color: black !important;
+      width: 10px !important;
+      height: 10px !important;
+    }
+  }
