@@ -20,8 +20,8 @@ const SingleProductPage = () => {
   const cartMessageStatus = useSelector(getCartMessageStatus);
   const [imgIndex,setImgIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
+  const titlePage = title.charAt(0).toUpperCase() + title.slice(1);
   
-
   useEffect(()=>{
       dispatch(fetchAsyncSingleProduct(id));
   },[id])
@@ -57,7 +57,7 @@ const SingleProductPage = () => {
         dispatch(setCartMessageOff());
      },2000)
   }
-  document.title = `Zmall - Online Shopping | ${title}`
+  document.title = `Zmall - Online Shopping | ${titlePage}`
 
   return (
     <main className='py-5'>

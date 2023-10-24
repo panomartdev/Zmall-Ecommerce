@@ -9,6 +9,7 @@ import { getAllCategories} from '../../store/categorySlice';
 import Loader from '../../components/Loader/Loader';
 import Product from '../../components/Product/Product';
 import CategoryProductPage from '../CategoryProductPage/CategoryProductPage';
+import { setAllCategoriesModalOff } from '../../store/modalSlice';
 
 const HomePage = () => {
   document.title = 'Zmall - Online Shopping | Homepage'
@@ -25,6 +26,7 @@ const HomePage = () => {
   const extendProductsStatus = useSelector(getExtendProductsStatus);
   console.log(allProducts);  
   const [products, setProducts] = useState([]);
+  
   useEffect(() => {
      setProducts(allProducts);
   },[allProducts])
