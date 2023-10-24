@@ -1,5 +1,8 @@
 @import '../../index.scss';
 header{
+    position: sticky;
+    top: -1em;
+    z-index: 1;
     .header-top{
         padding: 0.1em 0;
         .top-header-list{
