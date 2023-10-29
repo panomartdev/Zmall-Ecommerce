@@ -21,13 +21,13 @@ const SearchPage = () => {
     <main className='search-page'>
         {searchProducts.length == 0 ? (
             <div className='container'>
-                <h3 className='fw-5 text-danger py-5 text-center'>No Products Found</h3>
+                <h3 className='fw-5 text-danger py-5 text-center'>No Products Found for <span className='fw-9 fs-22'>"{searchTerm}"</span></h3>
             </div>
         ):(
             <div className='search-content'>
                 <div className='container'>
                     <div className='py-1'>
-                          <h2 className='main-title'>Search Result : </h2>
+                          <h2 className='main-title'>Search Result : "{searchTerm}"</h2>
                           <br/>
                           {searchProductsStatus == STATUS.LOADING ? (<Loader/>):(<Product products = {searchProducts}/>)}
                     </div>

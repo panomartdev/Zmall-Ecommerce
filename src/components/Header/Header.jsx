@@ -31,7 +31,9 @@ const Header = () => {
   const handleKeyPress = (e) => {
       if(e.key == "Enter") {
         e.preventDefault();
-         window.location.href = `/search/${searchTerm}`;
+        const currentSearchTerm = searchTerm;
+        location.href = `/search/${searchTerm}`;
+        setSearchTerm(currentSearchTerm);
       }
   }
 
@@ -67,9 +69,10 @@ const Header = () => {
                         <input type='text'
                              className='search-form'
                              placeholder='Search in Zmall'
+                             value={searchTerm}
                              onChange={(e) => handleSearchTerm(e)}
                              onKeyDown={(e) => handleKeyPress(e)}
-                             onSubmit={handleKeyPress}>
+                        >
                         </input>
 
                         <Link to={`/search/${searchTerm}`} className='search-button flex align-center justify-center'>
