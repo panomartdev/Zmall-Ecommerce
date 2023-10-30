@@ -5,9 +5,9 @@ import { HiOutlineShoppingCart } from 'react-icons/hi2'
 import './Header.scss';
 import Navigation from '../Navigation/Navigation';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllCategories, fetchAsyncCategories } from '../../store/categorySlice';
+import { getAllCategories} from '../../store/categorySlice';
 import { getAllCarts, getCartItemCount, getCartTotal } from '../../store/cartSlice';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import AllCategories from '../Modal/AllCategories';
 import { getModalAllCategories } from '../../store/modalSlice';
 
@@ -29,11 +29,9 @@ const Header = () => {
       setSearchTerm(e.target.value);
   }
   const handleKeyPress = (e) => {
-      if(e.key == "Enter") {
-        e.preventDefault();
-        const currentSearchTerm = searchTerm;
+      if(e.key == "Enter" && searchTerm.length > 0) {
+        e.preventDefault();   
         location.href = `/search/${searchTerm}`;
-        setSearchTerm(currentSearchTerm);
       }
   }
 
