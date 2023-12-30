@@ -1,12 +1,13 @@
 @import '../../index.scss';
 nav{
-    padding: 0.5em 0;
     .nav-cnt{
         @include flex(none,space-between,none);
         .nav-all-cat{
             cursor: pointer;
             background: transparent;
-            @include flex(none,none,none);
+            .cat-text{
+                padding: 0.5em 0;
+            }
             @media screen and (max-width: 640px) {
                 font-size: 12px;
             }
@@ -15,6 +16,7 @@ nav{
                 top: 4px;
                 left: 10px;
                 transform: rotate(45deg);
+                transition: all ease-in-out 0.3s;
                 width: 0.5em;
                 height: 0.5em;
                 border-width: 0px 2px 2px 0px;
@@ -25,6 +27,20 @@ nav{
                     left: 5px;
                 }
                 &.open{
+                    top: 6px;
+                    transform: rotate(225deg);
+                }
+            }
+            .nav-all-cat-lists{
+                display: none;
+                position: relative;
+                top: 0;
+            }
+            &:hover{
+                .nav-all-cat-lists{
+                    display: block;
+                }
+                .arrow{
                     top: 6px;
                     transform: rotate(225deg);
                 }

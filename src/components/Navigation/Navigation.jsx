@@ -1,5 +1,5 @@
 import './Navigation.scss';
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllCategories, fetchAsyncCategories } from '../../store/categorySlice';
@@ -8,6 +8,8 @@ import { getModalAllCategories, setAllCategoriesModalOff, setAllCategoriesModalO
 
 const Navigation = ({categories}) => {
   const dispatch = useDispatch();
+ 
+
   useEffect(()=>{
     dispatch(fetchAsyncCategories());
   },[dispatch])
@@ -20,23 +22,27 @@ const Navigation = ({categories}) => {
     .map((a) => a.value);
  },[categories])
 
-  const toggleCategoriesModal = () => {
-      if (!allCateModalStatus) {
-          dispatch(setAllCategoriesModalOn());
-      }else{
-          dispatch(setAllCategoriesModalOff());
-      }
-  }
+  // const toggleCategoriesModal = () => {
+  //     if (!allCateModalStatus) {
+  //         dispatch(setAllCategoriesModalOn());
+  //     }else{
+  //         dispatch(setAllCategoriesModalOff());
+  //     }
+  // }
   
   return (
     <nav className='bg-maincolor' >
       <div className='nav-cnt container text-white'>
         {/*All Categories*/}
-        <button className='nav-all-cat fw-4 fs-16 text-white' onClick={()=> toggleCategoriesModal()}>
-                Categories
-                <div className={`arrow ${allCateModalStatus == true ? "open":""}`}></div>
-        </button>
-          
+        <div className='nav-all-cat fw-4 fs-16 text-white' >
+                <div className='cat-text flex'>
+                     Categories
+                    <div className={`arrow`}></div>
+                </div>
+                <div className='nav-all-cat-lists'>
+                    <AllCategories categories={categories}/>
+                </div>
+        </div>
       
         {/*4 Categories Randomly*/}
         <ul className='nav-navbar'>
@@ -49,6 +55,7 @@ const Navigation = ({categories}) => {
           ))} 
       </ul>
     </div>
+    
   </nav>
   )
 }

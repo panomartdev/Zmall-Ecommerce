@@ -91,9 +91,9 @@ const Header = () => {
         </div>
         {/*Category Navigation*/}
         <Navigation categories={categories}/>
-        <div className='all-categories container'>
+        {/* <div className='all-categories container'>
               {allCateModalStatus && <AllCategories categories={categories}/>}
-        </div>
+        </div> */}
     </header>
   )
 }

@@ -1,7 +1,9 @@
 @import '../../index.scss';
 .all-categories{
     position: relative;
-    top: 0;
+    top: 0.5rem;
+
+   
     &-modal{
         padding: 2px 7px;
         width: 15em;

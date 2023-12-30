@@ -1,31 +1,31 @@
 import React, { useEffect, useRef } from 'react';
 import './AllCategories.scss';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { setAllCategoriesModalOff } from '../../store/modalSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { setAllCategoriesModalOff, setAllCategoriesModalOn, getModalAllCategories } from '../../store/modalSlice';
 
 const AllCategories = ({ categories }) => {
+
+  const allCateModalStatus = useSelector(getModalAllCategories);
   const dispatch = useDispatch();
-  const modalRef = useRef(null);
 
-  const handleClickOutside = (event) => {
-    if (!modalRef.current.contains(event.target)) {
-      dispatch(setAllCategoriesModalOff());
-    }
-  };
 
-  useEffect(() => {
-    // Attach the event listener when the component mounts
-    document.addEventListener('mousedown', handleClickOutside);
+  // const handleClickOutside = (event) => {
+  //   if (!modalRef.current.contains(event.target)) {
+  //     dispatch(setAllCategoriesModalOff());
+  //   }
+  // };
 
-    
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [modalRef]);
+  // useEffect(() => {
+
+  //   document.addEventListener('mousedown', handleClickOutside);
+  //   return () => {
+  //     document.removeEventListener('mousedown', handleClickOutside);
+  //   };
+  // }, []);
 
   return (
-    <div className='all-categories-modal bg-white' ref={modalRef}>
+    <div className='all-categories-modal bg-white' >
       <div className='all-categories-modal-content'>
         {categories.map((category, index) => (
           <Link
