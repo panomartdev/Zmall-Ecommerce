@@ -29,13 +29,15 @@ const Navigation = ({categories}) => {
   }
   
   return (
-    <nav className='bg-maincolor'>
+    <nav className='bg-maincolor' >
       <div className='nav-cnt container text-white'>
         {/*All Categories*/}
         <button className='nav-all-cat fw-4 fs-16 text-white' onClick={()=> toggleCategoriesModal()}>
                 Categories
                 <div className={`arrow ${allCateModalStatus == true ? "open":""}`}></div>
         </button>
+          
+      
         {/*4 Categories Randomly*/}
         <ul className='nav-navbar'>
           {randomCategories.slice(0,4).map((category, index) => (

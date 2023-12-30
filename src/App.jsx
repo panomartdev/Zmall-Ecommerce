@@ -11,7 +11,7 @@ import SingleProductPage from './pages/SingleProductPage/SingleProductPage';
 import SearchPage from './pages/SearchPage/SearchPage';
 
 function App() {
-
+  
   return (
     <div className='app'>
       <Provider store = {store}>

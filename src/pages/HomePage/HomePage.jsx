@@ -24,6 +24,7 @@ const HomePage = () => {
   const categories = useSelector(getAllCategories);
   const allProductsStatus = useSelector(getAllCategoriesStatus);
   const extendProductsStatus = useSelector(getExtendProductsStatus);
+  console.log("All Product")
   console.log(allProducts);  
   const [products, setProducts] = useState([]);
   
