@@ -22,25 +22,39 @@ const Navigation = ({categories}) => {
     .map((a) => a.value);
  },[categories])
 
-  // const toggleCategoriesModal = () => {
-  //     if (!allCateModalStatus) {
-  //         dispatch(setAllCategoriesModalOn());
-  //     }else{
-  //         dispatch(setAllCategoriesModalOff());
-  //     }
-  // }
+ const buttonRef = useRef()
+ 
+ useEffect(()=>{
+  let handler = (e) =>{
+    if(!buttonRef.current.contains(e.target)){
+      dispatch(setAllCategoriesModalOff());
+    }
+  }
+  document.addEventListener("mousedown", handler);
+      return() =>{
+    document.removeEventListener("mousedown", handler);
+  }
+},[]);
+
+  const toggleCategoriesModal = () => {
+      if (!allCateModalStatus) {
+          dispatch(setAllCategoriesModalOn());
+      }else{
+          dispatch(setAllCategoriesModalOff());
+      }
+  }
   
   return (
     <nav className='bg-maincolor' >
       <div className='nav-cnt container text-white'>
         {/*All Categories*/}
-        <div className='nav-all-cat fw-4 fs-16 text-white' >
-                <div className='cat-text flex'>
+        <div className='nav-all-cat fw-4 fs-16 text-white' ref={buttonRef}>
+                <div className='cat-text flex' onClick={()=>{toggleCategoriesModal()}}>
                      Categories
-                    <div className={`arrow`}></div>
+                    <div className={`arrow ${allCateModalStatus ? 'open':''}`}></div>
                 </div>
                 <div className='nav-all-cat-lists'>
-                    <AllCategories categories={categories}/>
+                    {allCateModalStatus && <AllCategories categories={categories}/>}
                 </div>
         </div>
       

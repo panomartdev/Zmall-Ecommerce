@@ -32,19 +32,19 @@ nav{
                 }
             }
             .nav-all-cat-lists{
-                display: none;
+               
                 position: relative;
                 top: 0;
             }
-            &:hover{
-                .nav-all-cat-lists{
-                    display: block;
-                }
-                .arrow{
-                    top: 6px;
-                    transform: rotate(225deg);
-                }
-            }
+            // &:hover{
+            //     .nav-all-cat-lists{
+            //         display: block;
+            //     }
+            //     .arrow{
+            //         top: 6px;
+            //         transform: rotate(225deg);
+            //     }
+            // }
         }
         .nav-navbar{
             @include flex(center,none,row); 
