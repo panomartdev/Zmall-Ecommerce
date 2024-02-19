@@ -12,6 +12,7 @@ import CategoryProductPage from '../CategoryProductPage/CategoryProductPage';
 import { setAllCategoriesModalOff } from '../../store/modalSlice';
 
 const HomePage = () => {
+  
   document.title = 'Zmall - Online Shopping | Homepage'
   
   const dispatch = useDispatch();
