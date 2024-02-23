@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { STATUS } from "../utils/status";
-// import { BASE_URL } from "../utils/apiUrl";
+// import { BASE_URL } from "../utils/apiUrl"; // Uncomment import BASE_URL in Local and Comment before push to Production
 import { shuffleArray } from "../utils/tools";
 
 const initialState = {
