@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { STATUS } from '../utils/status';
-import { BASE_URL } from "../utils/apiUrl";
+// import { BASE_URL } from "../utils/apiUrl";
 
 const initialState = {
     searchProducts: [],
