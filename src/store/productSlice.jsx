@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { STATUS } from "../utils/status";
+import { BASE_URL } from "../utils/apiUrl";
 
 const initialState = {
     allProducts : [],
@@ -53,21 +54,21 @@ const productSlice = createSlice({
 
 export const fetchAsyncAllProducts = createAsyncThunk('products/fetch',
     async(limit) => {
-        const response = await fetch(`${import.meta.env.VITE_URL}/products?limit=${limit}`);
+        const response = await fetch(`${BASE_URL}/products?limit=${limit}`);
         const data = await response.json();
         return data.products
     }   
 )
 export const fetchAsyncExtendProducts = createAsyncThunk('extendproducts/fetch',
     async(skip) => {
-        const response = await fetch(`${import.meta.env.VITE_URL}/products?limit=6&skip=${skip}`);
+        const response = await fetch(`${BASE_URL}/products?limit=6&skip=${skip}`);
         const data = await response.json();
         return data.products
     }
 )
 export const fetchAsyncSingleProduct = createAsyncThunk('singleproduct/fetch',
     async(id) => {
-        const response = await fetch(`${import.meta.env.VITE_URL}/products/${id}`);
+        const response = await fetch(`${BASE_URL}/products/${id}`);
         const data = await response.json();
         return data
     }

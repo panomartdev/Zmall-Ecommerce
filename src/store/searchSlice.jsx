@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { STATUS } from '../utils/status';
+import { BASE_URL } from "../utils/apiUrl";
 
 const initialState = {
     searchProducts: [],
@@ -31,7 +32,7 @@ const searchSlice = createSlice({
 
 export const fetchAsyncSearchProducts = createAsyncThunk('product-search/fetch',
     async(searchTerm) => {
-        const response = await fetch(`${import.meta.env.VITE_URL}/products/search?q=${searchTerm}`);
+        const response = await fetch(`${BASE_URL}/products/search?q=${searchTerm}`);
         const data = await response.json();
         return data.products;
     }

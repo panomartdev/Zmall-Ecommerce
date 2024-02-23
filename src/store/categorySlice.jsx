@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { STATUS } from "../utils/status";
+import { BASE_URL } from "../utils/apiUrl";
 import { shuffleArray } from "../utils/tools";
 
 const initialState = {
@@ -39,13 +40,13 @@ const categorySlice = createSlice({
 });
 
 export const fetchAsyncCategories = createAsyncThunk('categories/fetch', async()=>{
-    const response = await fetch(`${import.meta.env.VITE_URL}/products/categories`);
+    const response = await fetch(`${BASE_URL}/products/categories`);
     const data = await response.json();
     return data;
 });
 export const fetchAsyncProductsByCategory = createAsyncThunk('category-products/fetch',
     async(category) => {
-        const response = await fetch(`${import.meta.env.VITE_URL}/products/category/${category}`);
+        const response = await fetch(`${BASE_URL}/products/category/${category}`);
         const data = await response.json()
         return data.products;
     }
