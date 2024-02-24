@@ -54,21 +54,21 @@ const productSlice = createSlice({
 
 export const fetchAsyncAllProducts = createAsyncThunk('products/fetch',
     async(limit) => {
-        const response = await fetch(`${process.env.VITE_BASE_URL}/products?limit=${limit}`);
+        const response = await fetch(`${process.env.VITE_VERVEL_BASE_URL}/products?limit=${limit}`);
         const data = await response.json();
         return data.products
     }   
 )
 export const fetchAsyncExtendProducts = createAsyncThunk('extendproducts/fetch',
     async(skip) => {
-        const response = await fetch(`${process.env.VITE_BASE_URL}/products?limit=6&skip=${skip}`);
+        const response = await fetch(`${process.env.VITE_VERVEL_BASE_URL}/products?limit=6&skip=${skip}`);
         const data = await response.json();
         return data.products
     }
 )
 export const fetchAsyncSingleProduct = createAsyncThunk('singleproduct/fetch',
     async(id) => {
-        const response = await fetch(`${process.env.VITE_BASE_URL}/products/${id}`);
+        const response = await fetch(`${process.env.VITE_VERVEL_BASE_URL}/products/${id}`);
         const data = await response.json();
         return data
     }
