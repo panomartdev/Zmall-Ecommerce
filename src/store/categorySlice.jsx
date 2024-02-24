@@ -40,13 +40,13 @@ const categorySlice = createSlice({
 });
 
 export const fetchAsyncCategories = createAsyncThunk('categories/fetch', async()=>{
-    const response = await fetch(`${process.env.VITE_VERVEL_BASE_URL}/products/categories`);
+    const response = await fetch(`${import.meta.env.VITE_BASE_URL}/products/categories`);
     const data = await response.json();
     return data;
 });
 export const fetchAsyncProductsByCategory = createAsyncThunk('category-products/fetch',
     async(category) => {
-        const response = await fetch(`${process.env.VITE_VERVEL_BASE_URL}/products/category/${category}`);
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}/products/category/${category}`);
         const data = await response.json()
         return data.products;
     }
