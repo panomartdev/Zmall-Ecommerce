@@ -5,13 +5,16 @@ import {FaStar, FaStarHalf} from 'react-icons/fa'
 import Star from '../Star/Star';
 
 const Product = ({products}) => {
+  
   return (
     <div className='product-lists'>
         {products.map((product,index) => {
+          
              let discountedPrice = (product.price) - (product.price * (product.discountPercentage / 100))
+             let productTitle = product.title.toLowerCase().replace(/\s/g, '-');
 
              return (
-                <Link to={`/product/${product.id}/${product.title.toLowerCase()}`} key={index}>
+                <Link to={`/product/${product.id}/${productTitle}`} key={index}>
                     <div className='product-item bg-white'>
                         <div className='product-item-image'>
                              <img src={product.images ? (product.images.length > 0 ? product.images[0] : ""):""} alt={product.title}/> 

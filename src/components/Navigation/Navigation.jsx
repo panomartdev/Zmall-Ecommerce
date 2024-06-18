@@ -67,7 +67,7 @@ const Navigation = ({categories}) => {
                 </Link>
             </li> 
           ))} 
-      </ul>
+        </ul>
     </div>
     
   </nav>

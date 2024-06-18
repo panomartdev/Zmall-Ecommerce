@@ -24,10 +24,11 @@ function App() {
                   <Route path='/product/:id/:title' element = {<SingleProductPage/>}/> 
                   <Route path='search/:searchTerm' element = {<SearchPage/>}/>  
               </Routes>
-            <Footer/>
+            <Footer/>  
         </BrowserRouter>
       </Provider>  
     </div>
+  
   )
 }
 
